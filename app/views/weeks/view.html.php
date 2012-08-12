@@ -1,3 +1,3 @@
 <?php foreach ($games as $game): ?>
-	<?= $game->awayTeam->abbreviation; ?> vs. <?= $game->homeTeam->abbreviation; ?><br />
+	<?= $game->awayTeam()->location; ?> vs. <?= $game->homeTeam()->location; ?><br />
 <?php endforeach; ?>

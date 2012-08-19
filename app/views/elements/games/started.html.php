@@ -1,3 +1,4 @@
 <div class="game started">
-	<?= $game->awayTeam()->location; ?> vs. <?= $game->homeTeam()->location; ?>
+	<?= $game->awayTeam()->location; ?><br />
+	<?= $game->homeTeam()->location; ?>
 </div>

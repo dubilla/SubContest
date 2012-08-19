@@ -11,7 +11,7 @@
 <head>
 	<?php echo $this->html->charset();?>
 	<title><?php echo $this->title(); ?> &lt; SubContest &lt; Coinflipper</title>
-	<?php echo $this->html->style(array('reset', 'core')); ?>
+	<?php echo $this->html->style(array('reset', 'core', 'game')); ?>
 	<?php echo $this->scripts(); ?>
 	<?php echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
 </head>

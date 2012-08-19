@@ -1,0 +1,14 @@
+div.game {
+	border: 1px solid #aaa;
+	border-radius: 6px;
+	display: inline-block;
+	height: 100px;
+	margin-bottom: 0.5em;
+	margin-right: 0.5em;
+	padding: 1em;
+	width: 200px;
+}
+
+div.game.not-started {
+	background-color: lightgray;
+}

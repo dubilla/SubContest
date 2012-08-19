@@ -1,3 +1,4 @@
 <div class="game not-started">
-	<?= $game->awayTeam()->location; ?> vs. <?= $game->homeTeam()->location; ?>
+	<?= $game->awayTeam()->location; ?><br />
+	<?= $game->homeTeam()->location; ?> (<?= $this->game->line($game->line); ?>)
 </div>

@@ -14,6 +14,10 @@ class Games extends \lithium\data\Model {
 		return $this->team($entity->homeTeam->abbreviation);
 	}
 
+	public function hasStarted($entity) {
+		return ($entity->kickoff->sec < time());
+	}
+
 	private function team($abbreviation) {
 		$conditions = array('abbreviation' => $abbreviation);
 		$team = Teams::first(compact('conditions'));

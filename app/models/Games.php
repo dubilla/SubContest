@@ -6,6 +6,10 @@ use app\models\Teams;
 
 class Games extends \lithium\data\Model {
 
+	protected $_schema = array(
+		'_id' => array('type' => 'id')
+	);
+
 	public function awayTeam($entity) {
 		return self::team($entity->awayTeam->abbreviation);
 	}
@@ -16,6 +20,14 @@ class Games extends \lithium\data\Model {
 
 	public function hasStarted($entity) {
 		return ($entity->kickoff->sec < time());
+	}
+
+	public function pick($entity, $username, $team) {
+		if (!isset($entity->picks)) {
+			$entity->picks = array();
+		}
+
+		$entity->picks[$username] = $team;
 	}
 
 	private function team($abbreviation) {

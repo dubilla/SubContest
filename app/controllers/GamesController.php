@@ -16,6 +16,16 @@ class GamesController extends \lithium\action\Controller {
 		return compact('success');
 	}
 
+	public function unpick($gameId) {
+		$conditions = array('_id' => $gameId);
+		$game = Games::first(compact('conditions'));
+
+		$game->unpick('jpnance');
+		$success = $game->save();
+
+		return compact('success');
+	}
+
 }
 
 ?>

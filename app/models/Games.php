@@ -37,6 +37,12 @@ class Games extends \lithium\data\Model {
 		return $team;
 	}
 
+	public function unpick($entity, $username) {
+		if (isset($entity->picks[$username])) {
+			unset($entity->picks[$username]);
+		}
+	}
+
 }
 
 ?>

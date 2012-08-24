@@ -12,3 +12,7 @@ div.game {
 div.game.not-started {
 	background-color: lightgray;
 }
+
+div.game.started.picked {
+	border: 1px solid black;
+}

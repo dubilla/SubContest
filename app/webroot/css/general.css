@@ -1,4 +1,6 @@
 div#week-navigation {
+	font-size: 80%;
+	white-space: nowrap;
 }
 
 div#week-navigation a.week,
@@ -6,12 +8,16 @@ div#week-navigation span.week {
 	vertical-align: middle;
 }
 
-div#week-navigation a.previous.week {
-	margin-right: 1em;
+div#week-navigation a.week {
+	margin: 0 0.5em;
 }
 
-div#week-navigation a.next.week {
-	margin-left: 1em;
+div#week-navigation a.week-1 {
+	margin-left: 0;
+}
+
+div#week-navigation a.week-17 {
+	margin-right: 0;
 }
 
 div#week-navigation span.current.week {

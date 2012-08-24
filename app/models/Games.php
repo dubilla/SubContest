@@ -23,6 +23,10 @@ class Games extends \lithium\data\Model {
 	}
 
 	public function pick($entity, $username, $team) {
+		if ($entity->hasStarted()) {
+			return;
+		}
+
 		if (!isset($entity->picks)) {
 			$entity->picks = array();
 		}
@@ -38,6 +42,10 @@ class Games extends \lithium\data\Model {
 	}
 
 	public function unpick($entity, $username) {
+		if ($entity->hasStarted()) {
+			return;
+		}
+
 		if (isset($entity->picks[$username])) {
 			unset($entity->picks[$username]);
 		}

@@ -24,7 +24,7 @@ class Games extends \lithium\data\Model {
 
 	public function pick($entity, $username, $team) {
 		if ($entity->hasStarted()) {
-			return;
+			return false;
 		}
 
 		if (!isset($entity->picks)) {
@@ -32,6 +32,7 @@ class Games extends \lithium\data\Model {
 		}
 
 		$entity->picks[$username] = $team;
+		return $entity->save();
 	}
 
 	private function team($abbreviation) {
@@ -43,12 +44,14 @@ class Games extends \lithium\data\Model {
 
 	public function unpick($entity, $username) {
 		if ($entity->hasStarted()) {
-			return;
+			return false;
 		}
 
 		if (isset($entity->picks[$username])) {
 			unset($entity->picks[$username]);
 		}
+
+		return $entity->save();
 	}
 
 }

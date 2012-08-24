@@ -10,8 +10,7 @@ class GamesController extends \lithium\action\Controller {
 		$conditions = array('_id' => $gameId);
 		$game = Games::first(compact('conditions'));
 
-		$game->pick('jpnance', $team);
-		$success = $game->save();
+		$success = $game->pick('jpnance', $team);
 
 		return compact('success');
 	}
@@ -20,8 +19,7 @@ class GamesController extends \lithium\action\Controller {
 		$conditions = array('_id' => $gameId);
 		$game = Games::first(compact('conditions'));
 
-		$game->unpick('jpnance');
-		$success = $game->save();
+		$success = $game->unpick('jpnance');
 
 		return compact('success');
 	}

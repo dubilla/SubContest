@@ -1,0 +1,20 @@
+div#week-navigation {
+}
+
+div#week-navigation a.week,
+div#week-navigation span.week {
+	vertical-align: middle;
+}
+
+div#week-navigation a.previous.week {
+	margin-right: 1em;
+}
+
+div#week-navigation a.next.week {
+	margin-left: 1em;
+}
+
+div#week-navigation span.current.week {
+	font-size: 250%;
+	font-weight: bold;
+}

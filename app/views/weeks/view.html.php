@@ -1,5 +1,5 @@
 <?php $this->title('Week ' . $week); ?>
-<h1>Week <?= $week; ?></h1>
+<?= $this->view()->render(array('element' => 'week_navigation'), compact('week')); ?>
 <?php foreach ($games as $game): ?>
 	<?php if ($game->hasStarted()): ?>
 		<?= $this->view()->render(array('element' => 'games/started'), compact('game')); ?>

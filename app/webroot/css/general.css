@@ -22,5 +22,6 @@ div#week-navigation a.week-17 {
 
 div#week-navigation span.current.week {
 	font-size: 250%;
+	font-style: italic;
 	font-weight: bold;
 }

@@ -1,5 +1,11 @@
+div#container {
+	margin: 0 auto;
+	width: 960px;
+}
+
 div#week-navigation {
-	font-size: 80%;
+	font-size: 70%;
+	text-align: center;
 	white-space: nowrap;
 }
 
@@ -21,7 +27,7 @@ div#week-navigation a.week-17 {
 }
 
 div#week-navigation span.current.week {
-	font-size: 250%;
+	font-size: 200%;
 	font-style: italic;
 	font-weight: bold;
 }

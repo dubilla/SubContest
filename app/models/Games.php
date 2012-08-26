@@ -31,6 +31,10 @@ class Games extends \lithium\data\Model {
 			return false;
 		}
 
+		if ($team !== $entity->awayTeam->abbreviation && $team !== $entity->homeTeam->abbreviation) {
+			return false;
+		}
+
 		if (!isset($entity->picks)) {
 			$entity->picks = array();
 		}

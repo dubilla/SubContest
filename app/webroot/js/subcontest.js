@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function pickGame(e) {
 	var $this = $(this);
-	$.get($this.attr('href'));
+	$.getJSON($this.attr('href') + '.json');
 
 	return false;
 }

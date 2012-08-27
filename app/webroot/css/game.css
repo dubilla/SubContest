@@ -42,12 +42,15 @@ div.game.picked {
 
 div.game.final.lost {
 	background-color: #ffd0d0;
+	border-color: red;
 }
 
 div.game.final.pushed {
 	background-color: #f3f3f3;
+	border-color: #666;
 }
 
 div.game.final.won {
 	background-color: #d0ffd0;
+	border-color: green;
 }

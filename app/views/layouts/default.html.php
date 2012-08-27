@@ -18,6 +18,7 @@
 <body class="app">
 	<div id="container">
 		<div id="header">
+			<h1>SubContest</h1>
 		</div>
 		<div id="content">
 			<?php echo $this->content(); ?>

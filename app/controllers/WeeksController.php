@@ -16,7 +16,9 @@ class WeeksController extends \lithium\action\Controller {
 
 		$games = Games::all(compact('conditions', 'order'));
 
-		return compact('games', 'week');
+		$username = 'jpnance';
+
+		return compact('games', 'week', 'username');
 	}
 }
 

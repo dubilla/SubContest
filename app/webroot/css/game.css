@@ -19,6 +19,10 @@ div.game div.at {
 	margin-right: 0.3em;
 }
 
+div.game div.teams span.team.pick {
+	font-weight: bold;
+}
+
 div.game div.teams span.line {
 	font-size: 70%;
 }

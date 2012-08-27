@@ -22,6 +22,10 @@ class Games extends \lithium\data\Model {
 		return ($entity->kickoff->sec < time());
 	}
 
+	public function isFinal($entity) {
+		return isset($entity->winner);
+	}
+
 	public function isPickedBy($entity, $username) {
 		return (isset($entity->picks) && isset($entity->picks->$username));
 	}

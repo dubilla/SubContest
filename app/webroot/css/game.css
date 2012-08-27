@@ -10,13 +10,19 @@ div.game {
 }
 
 div.game div.at,
-div.game div.teams {
+div.game div.teams,
+div.game div.scores {
 	display: inline-block;
 }
 
 div.game div.at {
 	font-size: 0.8em;
 	margin-right: 0.3em;
+}
+
+div.game div.scores {
+	margin-left: 1em;
+	text-align: right;
 }
 
 div.game.not-started {

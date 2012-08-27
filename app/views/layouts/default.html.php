@@ -10,7 +10,7 @@
 <html>
 <head>
 	<?php echo $this->html->charset();?>
-	<title><?php echo $this->title(); ?> &lt; SubContest &lt; Coinflipper</title>
+	<title><?php echo $this->title(); ?> &laquo; SubContest &laquo; Coinflipper</title>
 	<?php echo $this->html->style(array('reset', 'core', 'general', 'game', 'team')); ?>
 	<?php echo $this->html->script(array('jquery', 'subcontest')); ?>
 	<?php echo $this->html->link('Icon', null, array('type' => 'icon')); ?>

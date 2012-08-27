@@ -36,6 +36,18 @@ div.game.not-started {
 	background-color: lightgray;
 }
 
-div.game.started.picked {
+div.game.picked {
 	border: 1px solid black;
+}
+
+div.game.final.lost {
+	background-color: #ffd0d0;
+}
+
+div.game.final.pushed {
+	background-color: #f3f3f3;
+}
+
+div.game.final.won {
+	background-color: #d0ffd0;
 }

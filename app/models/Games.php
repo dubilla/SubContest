@@ -23,7 +23,7 @@ class Games extends \lithium\data\Model {
 	}
 
 	public function isFinal($entity) {
-		return isset($entity->winner);
+		return (isset($entity->winner) || (isset($entity->push) && $entity->push));
 	}
 
 	public function isPickedBy($entity, $username) {
@@ -64,6 +64,18 @@ class Games extends \lithium\data\Model {
 		}
 
 		return $entity->save();
+	}
+
+	public function wasWonBy($entity, $username) {
+		return ($entity->isFinal() && $entity->isPickedBy($username) && isset($entity->winner) && ($entity->picks->$username == $entity->winner));
+	}
+
+	public function wasPushedBy($entity, $username) {
+		return ($entity->isFinal() && $entity->isPickedBy($username) && isset($entity->push));
+	}
+
+	public function wasLostBy($entity, $username) {
+		return ($entity->isFinal() && $entity->isPickedBy($username) && isset($entity->winner) && ($entity->picks->$username != $entity->winner));
 	}
 
 }

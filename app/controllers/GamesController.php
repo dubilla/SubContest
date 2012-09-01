@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use lithium\security\Auth;
 use app\models\Games;
 
 class GamesController extends \lithium\action\Controller {
@@ -10,7 +11,12 @@ class GamesController extends \lithium\action\Controller {
 		$conditions = array('_id' => $gameId);
 		$game = Games::first(compact('conditions'));
 
-		$success = $game->pick('jpnance', $team);
+		$success = false;
+		$user = Auth::check('default');
+
+		if ($user) {
+			$success = $game->pick($user['username'], $team);
+		}
 
 		return compact('success');
 	}
@@ -19,7 +25,12 @@ class GamesController extends \lithium\action\Controller {
 		$conditions = array('_id' => $gameId);
 		$game = Games::first(compact('conditions'));
 
-		$success = $game->unpick('jpnance');
+		$success = false;
+		$user = Auth::check('default');
+
+		if ($user) {
+			$success = $game->unpick($user['username']);
+		}
 
 		return compact('success');
 	}

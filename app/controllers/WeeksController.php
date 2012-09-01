@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use lithium\security\Auth;
 use app\models\Games;
 
 class WeeksController extends \lithium\action\Controller {
@@ -16,7 +17,8 @@ class WeeksController extends \lithium\action\Controller {
 
 		$games = Games::all(compact('conditions', 'order'));
 
-		$username = 'jpnance';
+		$user = Auth::check('default');
+		$username = $user['username'];
 
 		return compact('games', 'week', 'username');
 	}

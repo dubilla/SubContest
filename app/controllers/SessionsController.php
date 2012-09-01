@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use lithium\security\Auth;
-use lithium\security\Password;
 
 class SessionsController extends \lithium\action\Controller {
 
@@ -16,6 +15,11 @@ class SessionsController extends \lithium\action\Controller {
 				return $this->redirect('/sessions/add');
 			}
 		}
+	}
+
+	public function delete() {
+		Auth::clear('default');
+		return $this->redirect('/');
 	}
 
 }

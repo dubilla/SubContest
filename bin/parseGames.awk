@@ -7,5 +7,10 @@ BEGIN {
 }
 
 {
-	print "db.games.save({ \"awayTeam\": { \"abbreviation\": \"" $2 "\" }, \"homeTeam\": { \"abbreviation\": \"" $1 "\" }, \"kickoff\": ISODate(\"" $5 "\"), \"line\": " $8 ", \"season\": " $3 ", \"week\": " $4 " });"
+	printf "db.games.save({ \"awayTeam\": { \"abbreviation\": \"" $2 "\" }, \"homeTeam\": { \"abbreviation\": \"" $1 "\" }, \"kickoff\": ISODate(\"" $5 "\"), "
+
+	if ($8 != "\N")
+		printf "\"line\": " $8 ", "
+
+	printf "\"season\": " $3 ", \"week\": " $4 " });\n"
 }

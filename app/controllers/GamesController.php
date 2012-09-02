@@ -12,7 +12,7 @@ class GamesController extends \lithium\action\Controller {
 
 		$conditions = array('_id' => $gameId);
 		$fields = array('awayTeam' => 1, 'homeTeam' => 1, 'kickoff' => 1);
-		$game = Games::first(compact('conditions', 'fields'));
+		$game = Games::first(compact('conditions'));
 
 		$pick = $team;
 
@@ -31,7 +31,7 @@ class GamesController extends \lithium\action\Controller {
 
 		$conditions = array('_id' => $gameId);
 		$fields = array('kickoff' => 1);
-		$game = Games::first(compact('conditions', 'fields'));
+		$game = Games::first(compact('conditions'));
 
 		$success = false;
 		$user = Auth::check('default');

@@ -19,6 +19,13 @@
 	<div id="container">
 		<div id="header">
 			<h1>SubContest</h1>
+			<p>
+				<?php if ($this->user->isLoggedIn()): ?>
+					<?= $this->html->link('Log Out', '/sessions/delete'); ?>
+				<?php else: ?>
+					<?= $this->html->link('Log In', '/sessions/add'); ?>
+				<?php endif; ?>
+			</p>
 		</div>
 		<div id="content">
 			<?php echo $this->content(); ?>

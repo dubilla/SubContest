@@ -36,6 +36,14 @@ div.game.not-started {
 	background-color: lightgray;
 }
 
+div.game.not-started.not-picked a.team.picked,
+div.game.not-started.picked.away-team a.home-team.picked,
+div.game.not-started.picked.home-team a.away-team.picked,
+div.game.not-started.picked.away-team a.away-team.not-picked,
+div.game.not-started.picked.home-team a.home-team.not-picked {
+	display: none;
+}
+
 div.game.picked {
 	border: 1px solid black;
 }

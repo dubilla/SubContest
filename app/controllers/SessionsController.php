@@ -12,7 +12,7 @@ class SessionsController extends \lithium\action\Controller {
 				return $this->redirect('/');
 			}
 			else {
-				return $this->redirect('/sessions/add');
+				return $this->redirect('/login');
 			}
 		}
 	}

@@ -21,9 +21,9 @@
 			<h1>SubContest</h1>
 			<p>
 				<?php if ($this->user->isLoggedIn()): ?>
-					<?= $this->html->link('Log Out', '/sessions/delete'); ?>
+					<?= $this->html->link('Log Out', '/logout'); ?>
 				<?php else: ?>
-					<?= $this->html->link('Log In', '/sessions/add'); ?>
+					<?= $this->html->link('Log In', '/login'); ?>
 				<?php endif; ?>
 			</p>
 		</div>

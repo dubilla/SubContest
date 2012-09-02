@@ -30,6 +30,12 @@ use lithium\core\Environment;
 Router::connect('/', 'Weeks::view');
 
 /**
+ * Making the 'log in' and 'log out' functions nicer to look at in the address bar.
+ */
+Router::connect('/login', 'Sessions::add');
+Router::connect('/logout', 'Sessions::delete');
+
+/**
  * Connect the rest of `PagesController`'s URLs. This will route URLs like `/pages/about` to
  * `PagesController`, rendering `/views/pages/about.html.php` as a static page.
  */

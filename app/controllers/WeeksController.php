@@ -26,6 +26,8 @@ class WeeksController extends \lithium\action\Controller {
 			}
 		}
 
+		date_default_timezone_set('US/Eastern');
+
 		$user = Auth::check('default');
 		$username = $user['username'];
 

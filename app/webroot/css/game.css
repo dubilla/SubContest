@@ -20,6 +20,13 @@ div.game div.at {
 	margin-right: 0.3em;
 }
 
+div.game div.kickoff {
+	float: right;
+	font-size: 0.8em;
+	margin-top: 0.2em;
+	text-align: right;
+}
+
 div.game div.teams span.team.pick {
 	font-weight: bold;
 }

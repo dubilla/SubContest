@@ -11,7 +11,7 @@
 <head>
 	<?php echo $this->html->charset();?>
 	<title><?php echo $this->title(); ?> &laquo; SubContest &laquo; Coinflipper</title>
-	<?php echo $this->html->style(array('reset', 'core', 'general', 'game', 'team')); ?>
+	<?php echo $this->html->style(array('reset', 'core', 'general', 'game', 'team', 'standings')); ?>
 	<?php echo $this->html->script(array('jquery', 'subcontest')); ?>
 	<?php echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
 </head>
@@ -21,6 +21,7 @@
 			<h1>SubContest</h1>
 			<p>
 				<?php if ($this->user->isLoggedIn()): ?>
+					<?= $this->html->link('Standings', '/standings'); ?> |
 					<?= $this->html->link('Log Out', '/logout'); ?>
 				<?php else: ?>
 					<?= $this->html->link('Log In', '/login'); ?>

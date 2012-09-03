@@ -1,0 +1,10 @@
+table#standings th {
+	font-weight: bold;
+}
+
+table#standings th,
+table#standings td {
+	font-size: 200%;
+	padding: 0.2em 1em 0.2em 0;
+	text-align: left;
+}

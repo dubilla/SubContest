@@ -21,6 +21,7 @@
 			<h1>SubContest</h1>
 			<p>
 				<?php if ($this->user->isLoggedIn()): ?>
+					<?= $this->html->link('Games', '/'); ?> |
 					<?= $this->html->link('Standings', '/standings'); ?> |
 					<?= $this->html->link('Log Out', '/logout'); ?>
 				<?php else: ?>

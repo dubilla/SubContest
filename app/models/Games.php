@@ -31,7 +31,7 @@ class Games extends \lithium\data\Model {
 	}
 
 	public function pick($entity, $username, $team) {
-		if ($entity->hasStarted()) {
+		if ($entity->hasStarted() || $entity->isFinal()) {
 			return false;
 		}
 
@@ -66,7 +66,7 @@ class Games extends \lithium\data\Model {
 	}
 
 	public function unpick($entity, $username) {
-		if ($entity->hasStarted()) {
+		if ($entity->hasStarted() || $entity->isFinal()) {
 			return false;
 		}
 

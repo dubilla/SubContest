@@ -9,7 +9,21 @@ class WeeksController extends \lithium\action\Controller {
 
 	public function view($week = null) {
 		if (!isset($week)) {
-			$week = 1;
+			$start = mktime(0, 0, 0, 9, 5, 2012);
+			$now = mktime();
+
+			$days = intval(($now - $start) / 86400);
+
+			if ($days < 7) {
+				$week = 1;
+			}
+			else {
+				$week = intval(($days / 7) + 1);
+			}
+
+			if ($week > 17) {
+				$week = 17;
+			}
 		}
 
 		$user = Auth::check('default');

@@ -7,3 +7,7 @@ h1 {
 	font-size: 2em;
 	font-weight: bold;
 }
+
+a:visited {
+	color: blue;
+}

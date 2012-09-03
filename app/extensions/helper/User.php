@@ -6,7 +6,7 @@ use lithium\security\Auth;
 
 class User extends \lithium\template\Helper {
 
-	public function isLoggedIn($team) {
+	public function isLoggedIn() {
 		return (Auth::check('default') != false);
 	}
 

@@ -1,3 +1,6 @@
 [submodule "libraries/lithium"]
 	path = libraries/lithium
 	url = git://github.com/UnionOfRAD/lithium.git
+[submodule "app/webroot/rockmongo"]
+	path = app/webroot/rockmongo
+	url = git://github.com/mlazarov/rockmongo.git

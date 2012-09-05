@@ -4,7 +4,7 @@ table#standings th {
 
 table#standings th,
 table#standings td {
-	font-size: 200%;
+	font-size: 150%;
 	padding: 0.2em 1em 0.2em 0;
 	text-align: left;
 }

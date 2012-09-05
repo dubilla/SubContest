@@ -22,8 +22,9 @@ div.game div.at {
 
 div.game div.kickoff {
 	float: right;
-	font-size: 0.8em;
-	margin-top: 0.2em;
+	font-size: 0.7em;
+	line-height: 1.2em;
+	margin-top: 0.4em;
 	text-align: right;
 }
 

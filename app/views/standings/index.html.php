@@ -7,7 +7,7 @@
 	<?php foreach ($standings as $username => $score): ?>
 		<tr>
 			<td><?= $username; ?></td>
-			<td><?= $score; ?></td>
+			<td><?= $this->standings->score($score); ?></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

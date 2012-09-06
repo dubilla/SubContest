@@ -33,7 +33,7 @@ class WeeksController extends \lithium\action\Controller {
 
 		$conditions = array('week' => intval($week));
 		$order = array('kickoff' => 1, 'awayTeam.abbreviation' => 1);
-		$fields = array('awayTeam' => 1, 'homeTeam' => 1, 'kickoff' => 1, 'line' => 1, 'picks.' . $username => 1, 'winner' => 1);
+		$fields = array('awayTeam' => 1, 'homeTeam' => 1, 'kickoff' => 1, 'line' => 1, 'picks.' . $username => 1, 'push' => 1, 'winner' => 1);
 
 		$games = Games::all(compact('conditions', 'order', 'fields'));
 

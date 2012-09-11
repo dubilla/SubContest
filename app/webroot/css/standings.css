@@ -8,3 +8,8 @@ table#standings td {
 	padding: 0.2em 2em 0.2em 0;
 	text-align: left;
 }
+
+table#standings th.score,
+table#standings td.score {
+	text-align: center;
+}

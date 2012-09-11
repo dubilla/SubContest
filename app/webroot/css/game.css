@@ -36,11 +36,6 @@ div.game div.teams span.line {
 	font-size: 70%;
 }
 
-div.game div.scores {
-	margin-left: 2em;
-	text-align: right;
-}
-
 div.game.not-started {
 	background-color: lightgray;
 }
@@ -71,3 +66,12 @@ div.game.final.won {
 	background-color: #d0ffd0;
 	border-color: green;
 }
+
+div.game.final div.teams {
+	width: 160px;
+}
+
+div.game.final div.scores {
+	text-align: right;
+}
+

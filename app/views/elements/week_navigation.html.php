@@ -1,9 +1,11 @@
 <div id="week-navigation">
-	<?php for ($n = 1; $n <= 17; $n++): ?>
-		<?php if ($week == $n): ?>
-			<span class="current week">Week <?= $week; ?></span>
-		<?php else: ?>
-			<?= $this->html->link('Week ' . $n, 'weeks/view/' . $n, array('class' => 'week week-' . $n)); ?>
-		<?php endif; ?>
-	<?php endfor; ?>
+	<?php if ($week > 1): ?>
+		<?= $this->html->link('Week ' . ($week - 1), 'weeks/view/' . ($week - 1), array('class' => 'previous week')); ?>
+	<?php endif; ?>
+
+	<span class="current week">Week <?= $week; ?></span>
+
+	<?php if ($week < 17): ?>
+		<?= $this->html->link('Week ' . ($week + 1), 'weeks/view/' . ($week + 1), array('class' => 'next week')); ?>
+	<?php endif; ?>
 </div>

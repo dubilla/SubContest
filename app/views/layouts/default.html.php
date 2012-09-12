@@ -24,6 +24,7 @@
 				<?= $this->html->link('Games', '/'); ?> |
 				<?= $this->html->link('Standings', '/standings'); ?> |
 				<?= $this->html->link('Data', 'https://docs.google.com/spreadsheet/lv?key=0ArIlEyPlzLNIdHpoZnNJQ29xaHZ4STJXZWhuRUpqT0E'); ?> |
+				<?= $this->html->link('Lines', 'http://www.thelvh.com/supercontestweeklycard'); ?> |
 
 				<?php if ($this->user->isLoggedIn()): ?>
 					<?= $this->html->link('Log Out', '/logout'); ?>

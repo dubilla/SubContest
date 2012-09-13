@@ -6,7 +6,7 @@ div.game {
 	margin-top: 0.5em;
 	margin-right: 0.2em;
 	padding: 1em;
-	width: 200px;
+	width: 224px;
 }
 
 div.game div.at,
@@ -68,7 +68,7 @@ div.game.final.won {
 }
 
 div.game.final div.teams {
-	width: 158px;
+	width: 182px;
 }
 
 div.game.final div.scores {

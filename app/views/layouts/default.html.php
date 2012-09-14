@@ -20,18 +20,18 @@
 	<div id="container">
 		<div id="header">
 			<h1>SubContest</h1>
-			<p>
-				<?= $this->html->link('Games', '/'); ?> |
-				<?= $this->html->link('Standings', '/standings'); ?> |
-				<?= $this->html->link('Data', 'https://docs.google.com/spreadsheet/lv?key=0ArIlEyPlzLNIdHpoZnNJQ29xaHZ4STJXZWhuRUpqT0E'); ?> |
-				<?= $this->html->link('Lines', 'http://www.thelvh.com/supercontestweeklycard'); ?> |
+			<ul id="navigation">
+				<li><?= $this->html->link('Games', '/'); ?></li>
+				<li><?= $this->html->link('Standings', '/standings'); ?></li>
+				<li><?= $this->html->link('Data', 'https://docs.google.com/spreadsheet/lv?key=0ArIlEyPlzLNIdHpoZnNJQ29xaHZ4STJXZWhuRUpqT0E'); ?></li>
+				<li><?= $this->html->link('Lines', 'http://www.thelvh.com/supercontestweeklycard'); ?></li>
 
 				<?php if ($this->user->isLoggedIn()): ?>
-					<?= $this->html->link('Log Out', '/logout'); ?>
+					<li><?= $this->html->link('Log Out', '/logout'); ?></li>
 				<?php else: ?>
-					<?= $this->html->link('Log In', '/login'); ?>
+					<li><?= $this->html->link('Log In', '/login'); ?></li>
 				<?php endif; ?>
-			</p>
+			</ul>
 		</div>
 		<div id="content">
 			<?php echo $this->content(); ?>

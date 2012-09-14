@@ -7,6 +7,15 @@ div#header {
 	margin: 1em 0;
 }
 
+ul#navigation {
+	margin-top: 0.3em;
+}
+
+ul#navigation li {
+	display: inline;
+	margin-right: 0.3em;
+}
+
 div#week-navigation {
 	font-size: 70%;
 }

@@ -4,10 +4,10 @@
 		<th>Player</th>
 		<th class="score">Score</th>
 	</tr>
-	<?php foreach ($standings as $username => $score): ?>
+	<?php foreach ($standings as $username => $standing): ?>
 		<tr>
-			<td><?= $username; ?></td>
-			<td class="score"><?= $this->standings->score($score); ?></td>
+			<td><?= $standing['name']; ?></td>
+			<td class="score"><?= $this->standings->score($standing['score']); ?></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

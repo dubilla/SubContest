@@ -18,25 +18,37 @@ class StandingsController extends \lithium\action\Controller {
 		$standings = array();
 
 		foreach ($users as $user) {
-			$standings[$user['username']] = 0;
+			$standings[$user['username']] = array('name' => $user['firstName'], 'score' => 0);
 		}
 
 		foreach ($games as $game) {
 			if (isset($game->picks) && $game->isFinal()) {
 				foreach ($game->picks as $username => $pick) {
 					if ($pick == $game->winner) {
-						$standings[$username] += 1;
+						$standings[$username]['score'] += 1;
 					}
 					else if (isset($game->push)) {
-						$standings[$username] += 0.5;
+						$standings[$username]['score'] += 0.5;
 					}
 				}
 			}
 		}
 
-		arsort($standings);
+		uasort($standings, array($this, 'sortStandings'));
 
 		return compact('users', 'standings');
+	}
+
+	private static function sortStandings($a, $b) {
+		if ($a['score'] == $b['score']) {
+			if ($a['name'] == $b['name']) {
+				return 0;
+			}
+
+			return ($a['name'] < $b['name']) ? -1 : 1;
+		}
+
+		return ($a['score'] > $b['score']) ? -1 : 1;
 	}
 
 }

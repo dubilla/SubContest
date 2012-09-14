@@ -8,4 +8,5 @@
 		<span class="score"><?= $game->awayTeam->score; ?><br />
 		<span class="score"><?= $game->homeTeam->score; ?><br />
 	</div>
+	<?= $this->view()->render(array('element' => 'games/picks'), compact('game')); ?>
 </div>

@@ -37,7 +37,7 @@ class Games extends \lithium\data\Model {
 		}
 
 		if ($team !== $entity->awayTeam->abbreviation && $team !== $entity->homeTeam->abbreviation) {
-			return false;
+			throw new Exception('That team that isn\'t playing in that game.');
 		}
 
 		if (!$entity->isPickedBy($username)) {

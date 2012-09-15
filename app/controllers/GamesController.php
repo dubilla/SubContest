@@ -44,10 +44,16 @@ class GamesController extends \lithium\action\Controller {
 		$user = Auth::check('default');
 
 		if ($user) {
-			$success = $game->unpick($user['username']);
+			try {
+				$success = $game->unpick($user['username']);
+			}
+			catch (Exception $e) {
+				$success = false;
+				$error = $e->getMessage();
+			}
 		}
 
-		return compact('success', 'action', 'game');
+		return compact('success', 'action', 'game', 'error');
 	}
 
 }

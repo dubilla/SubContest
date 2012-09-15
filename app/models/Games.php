@@ -68,7 +68,7 @@ class Games extends \lithium\data\Model {
 
 	public function unpick($entity, $username) {
 		if ($entity->hasStarted() || $entity->isFinal()) {
-			return false;
+			throw new Exception('You tried to unpick a game that has already started.');
 		}
 
 		if (isset($entity->picks[$username])) {

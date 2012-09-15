@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Exception;
 use lithium\security\Auth;
 use app\models\Games;
 
@@ -20,10 +21,16 @@ class GamesController extends \lithium\action\Controller {
 		$user = Auth::check('default');
 
 		if ($user) {
-			$success = $game->pick($user['username'], $team);
+			try {
+				$success = $game->pick($user['username'], $team);
+			}
+			catch (Exception $e) {
+				$success = false;
+				$error = $e->getMessage();
+			}
 		}
 
-		return compact('success', 'action', 'pick', 'game');
+		return compact('success', 'action', 'pick', 'game', 'error');
 	}
 
 	public function unpick($gameId) {

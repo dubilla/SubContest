@@ -37,4 +37,7 @@ function updateInterface(data) {
 			game.removeClass('home-team');
 		}
 	}
+	else {
+		alert(data.error);
+	}
 }

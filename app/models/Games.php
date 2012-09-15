@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use Exception;
 use app\models\Teams;
 
 class Games extends \lithium\data\Model {
@@ -32,7 +33,7 @@ class Games extends \lithium\data\Model {
 
 	public function pick($entity, $username, $team) {
 		if ($entity->hasStarted() || $entity->isFinal()) {
-			return false;
+			throw new Exception('You tried to pick a game that has already started.');
 		}
 
 		if ($team !== $entity->awayTeam->abbreviation && $team !== $entity->homeTeam->abbreviation) {

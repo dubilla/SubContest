@@ -16,6 +16,12 @@ ul#navigation li {
 	margin-right: 0.3em;
 }
 
+ul#navigation li a.selected {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 div#week-navigation {
 	font-size: 70%;
 }

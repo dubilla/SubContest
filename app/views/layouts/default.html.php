@@ -21,8 +21,8 @@
 		<div id="header">
 			<h1>SubContest</h1>
 			<ul id="navigation">
-				<li><?= $this->html->link('Games', '/'); ?></li>
-				<li><?= $this->html->link('Standings', '/standings'); ?></li>
+				<li><?= $this->html->link('Games', '/', array('class' => ($this->_request->controller == 'weeks') ? 'selected' : '')); ?></li>
+				<li><?= $this->html->link('Standings', '/standings', array('class' => ($this->_request->controller == 'standings') ? 'selected' : '')); ?></li>
 				<li><?= $this->html->link('Data', 'https://docs.google.com/spreadsheet/lv?key=0ArIlEyPlzLNIdHpoZnNJQ29xaHZ4STJXZWhuRUpqT0E'); ?></li>
 				<li><?= $this->html->link('Lines', 'http://www.thelvh.com/supercontestweeklycard'); ?></li>
 

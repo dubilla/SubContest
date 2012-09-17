@@ -57,6 +57,7 @@ div.game.not-started.picked.home-team a.home-team.not-picked {
 }
 
 div.game.picked {
+	background-color: #D4ECFC;
 	border: 1px solid black;
 }
 

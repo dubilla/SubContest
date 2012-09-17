@@ -93,12 +93,13 @@ div.game table.picks {
 div.game table.picks th,
 div.game table.picks td {
 	font-size: 80%;
-	padding: 0.2em;
+	padding-bottom: 0.2em;
 	word-spacing: 2px;
 }
 
 div.game table.picks th {
 	font-weight: bold;
+	padding-right: 0.6em;
 	text-align: right;
 	width: 30px;
 }
@@ -109,4 +110,8 @@ div.game table.picks th.winner {
 
 div.game table.picks th.loser {
 	color: #ab0000;
+}
+
+div.game table.picks th.push {
+	color: #999;
 }

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use lithium\security\Auth;
 use app\models\Games;
+use app\models\Users;
 
 class WeeksController extends \lithium\action\Controller {
 
@@ -41,11 +42,13 @@ class WeeksController extends \lithium\action\Controller {
 
 				if (isset($game->picks)) {
 					foreach ($game->picks as $username => $pick) {
+						$user = Users::findByUsername($username);
+
 						if ($pick == $game->awayTeam->abbreviation) {
-							array_push($awayPicks, $username);
+							array_push($awayPicks, $user->firstName);
 						}
 						else if ($pick == $game->homeTeam->abbreviation) {
-							array_push($homePicks, $username);
+							array_push($homePicks, $user->firstName);
 						}
 					}
 				}

@@ -102,3 +102,11 @@ div.game table.picks th {
 	text-align: right;
 	width: 30px;
 }
+
+div.game table.picks th.winner {
+	color: #417A25;
+}
+
+div.game table.picks th.loser {
+	color: #ab0000;
+}

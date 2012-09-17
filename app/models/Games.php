@@ -46,7 +46,7 @@ class Games extends \lithium\data\Model {
 			$conditions = array('week' => $week, ('picks.' . $username) => array('$exists' => true));
 			$count = Games::count(compact('conditions'));
 
-			if ($count == 5) {
+			if ($count >= 5) {
 				throw new Exception('You\'ve already made five picks this week.');
 			}
 		}

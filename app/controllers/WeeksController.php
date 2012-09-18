@@ -53,6 +53,9 @@ class WeeksController extends \lithium\action\Controller {
 					}
 				}
 
+				sort($awayPicks);
+				sort($homePicks);
+
 				$game->awayTeam->picks = $awayPicks;
 				$game->homeTeam->picks = $homePicks;
 			}

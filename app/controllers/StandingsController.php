@@ -12,7 +12,14 @@ class StandingsController extends \lithium\action\Controller {
 		$userFields = array('password' => 0);
 		$users = Users::all(array('conditions' => $userConditions, 'fields' => $userFields));
 
-		$gameConditions = array('season' => 2012);
+		$gameConditions = array(
+			'season' => 2012, 
+			'picks' => array('$exists' => true), 
+			'$or' => array(
+				array('winner' => array('$exists' => true)),
+				array('push' => array('$exists' => true))
+			)
+		);
 		$games = Games::all(array('conditions' => $gameConditions));
 
 		$standings = array();
@@ -22,21 +29,19 @@ class StandingsController extends \lithium\action\Controller {
 		}
 
 		foreach ($games as $game) {
-			if (isset($game->picks) && $game->isFinal()) {
-				foreach ($game->picks as $username => $pick) {
-					if ($pick == $game->winner) {
-						$standings[$username]['score'] += 1;
-					}
-					else if (isset($game->push)) {
-						$standings[$username]['score'] += 0.5;
-					}
+			foreach ($game->picks as $username => $pick) {
+				if ($pick == $game->winner) {
+					$standings[$username]['score'] += 1;
+				}
+				else if (isset($game->push)) {
+					$standings[$username]['score'] += 0.5;
 				}
 			}
 		}
 
 		uasort($standings, array($this, 'sortStandings'));
 
-		return compact('users', 'standings');
+		return compact('users', 'standings', 'time');
 	}
 
 	private static function sortStandings($a, $b) {

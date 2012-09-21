@@ -6,6 +6,8 @@ use app\models\Games;
 
 class Scoring extends \lithium\console\Command {
 
+	public $update;
+
 	public function determineWinners() {
 		$games = Games::all();
 
@@ -50,25 +52,29 @@ class Scoring extends \lithium\console\Command {
 			$awayTeam = ($awayTeam == 'JAC') ? 'JAX' : $awayTeam;
 			$homeTeam = ($homeTeam == 'JAC') ? 'JAX' : $homeTeam;
 
-			$conditions = array(
-				'season' => $season,
-				'week' => $week,
-				'awayTeam.abbreviation' => $awayTeam,
-				'homeTeam.abbreviation' => $homeTeam,
-				'awayTeam.score' => array('$exists' => false),
-				'homeTeam.score' => array('$exists' => false),
-				'winner' => array('$exists' => false),
-				'push' => array('$exists' => false)
-			);
+			if ($this->update == 'true') {
+				$conditions = array(
+					'season' => $season,
+					'week' => $week,
+					'awayTeam.abbreviation' => $awayTeam,
+					'homeTeam.abbreviation' => $homeTeam,
+					'awayTeam.score' => array('$exists' => false),
+					'homeTeam.score' => array('$exists' => false),
+					'winner' => array('$exists' => false),
+					'push' => array('$exists' => false)
+				);
 
-			$game = Games::first(compact('conditions'));
+				$game = Games::first(compact('conditions'));
 
-			if ($game) {
-				$game->awayTeam->score = $awayScore;
-				$game->homeTeam->score = $homeScore;
+				if ($game) {
+					$game->awayTeam->score = $awayScore;
+					$game->homeTeam->score = $homeScore;
 
-				$game->save();
+					$game->save();
+				}
 			}
+
+			$this->out($awayTeam . ' ' . $awayScore . ', ' . $homeTeam . ' ' . $homeScore);
 		}
 
 		return;

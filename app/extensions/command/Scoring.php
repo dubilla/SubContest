@@ -40,7 +40,7 @@ class Scoring extends \lithium\console\Command {
 		$week = intval($weekSeasonMatches[1]);
 		$season = intval($weekSeasonMatches[2]);
 
-		$gamePattern = '/<g .*?q="F".*?h="(.*?)".*?hs="(\d\d?)".*?v="(.*?)".*?vs="(\d\d?)".*?\/>/';
+		$gamePattern = '/<g .*?q="FO?".*?h="(.*?)".*?hs="(\d\d?)".*?v="(.*?)".*?vs="(\d\d?)".*?\/>/';
 		preg_match_all($gamePattern, $scores, $gameMatches);
 
 		foreach ($gameMatches[0] as $i => $gameMatch) {

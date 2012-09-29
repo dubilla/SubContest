@@ -9,30 +9,32 @@ class Scoring extends \lithium\console\Command {
 	public $update;
 
 	public function determineWinners() {
-		$conditions = array(
-			'winner' => array('$exists' => false),
-			'push' => array('$exists' => false),
-			'line' => array('$exists' => true),
-			'homeTeam.score' => array('$exists' => true),
-			'awayTeam.score' => array('$exists' => true)
-		);
+		if ($this->update == 'true') {
+			$conditions = array(
+				'winner' => array('$exists' => false),
+				'push' => array('$exists' => false),
+				'line' => array('$exists' => true),
+				'homeTeam.score' => array('$exists' => true),
+				'awayTeam.score' => array('$exists' => true)
+			);
 
-		$games = Games::all(compact('conditions'));
+			$games = Games::all(compact('conditions'));
 
-		foreach ($games as $game) {
-			$handicappedScore = ($game->homeTeam->score + $game->line) - $game->awayTeam->score;
+			foreach ($games as $game) {
+				$handicappedScore = ($game->homeTeam->score + $game->line) - $game->awayTeam->score;
 
-			if ($handicappedScore == 0) {
-				$game->push = true;
+				if ($handicappedScore == 0) {
+					$game->push = true;
+				}
+				else if ($handicappedScore > 0) {
+					$game->winner = $game->homeTeam->abbreviation;
+				}
+				else if ($handicappedScore < 0) {
+					$game->winner = $game->awayTeam->abbreviation;
+				}
+
+				$game->save();
 			}
-			else if ($handicappedScore > 0) {
-				$game->winner = $game->homeTeam->abbreviation;
-			}
-			else if ($handicappedScore < 0) {
-				$game->winner = $game->awayTeam->abbreviation;
-			}
-
-			$game->save();
 		}
 	}
 
@@ -77,8 +79,9 @@ class Scoring extends \lithium\console\Command {
 					$game->save();
 				}
 			}
-
-			$this->out($awayTeam . ' ' . $awayScore . ', ' . $homeTeam . ' ' . $homeScore);
+			else {
+				$this->out($awayTeam . ' ' . $awayScore . ', ' . $homeTeam . ' ' . $homeScore);
+			}
 		}
 
 		return;

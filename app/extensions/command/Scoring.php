@@ -9,26 +9,30 @@ class Scoring extends \lithium\console\Command {
 	public $update;
 
 	public function determineWinners() {
-		$games = Games::all();
+		$conditions = array(
+			'winner' => array('$exists' => false),
+			'push' => array('$exists' => false),
+			'line' => array('$exists' => true),
+			'homeTeam.score' => array('$exists' => true),
+			'awayTeam.score' => array('$exists' => true)
+		);
+
+		$games = Games::all(compact('conditions'));
 
 		foreach ($games as $game) {
-			if (!$game->isFinal()) {
-				if (isset($game->line) && isset($game->homeTeam->score) && isset($game->awayTeam->score)) {
-					$handicappedScore = ($game->homeTeam->score + $game->line) - $game->awayTeam->score;
+			$handicappedScore = ($game->homeTeam->score + $game->line) - $game->awayTeam->score;
 
-					if ($handicappedScore == 0) {
-						$game->push = true;
-					}
-					else if ($handicappedScore > 0) {
-						$game->winner = $game->homeTeam->abbreviation;
-					}
-					else if ($handicappedScore < 0) {
-						$game->winner = $game->awayTeam->abbreviation;
-					}
-
-					$game->save();
-				}
+			if ($handicappedScore == 0) {
+				$game->push = true;
 			}
+			else if ($handicappedScore > 0) {
+				$game->winner = $game->homeTeam->abbreviation;
+			}
+			else if ($handicappedScore < 0) {
+				$game->winner = $game->awayTeam->abbreviation;
+			}
+
+			$game->save();
 		}
 	}
 

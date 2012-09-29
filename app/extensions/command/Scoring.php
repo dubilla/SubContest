@@ -45,9 +45,9 @@ class Scoring extends \lithium\console\Command {
 
 		foreach ($gameMatches[0] as $i => $gameMatch) {
 			$awayTeam = $gameMatches[3][$i];
-			$awayScore = intval($gameMatches[4][$i]);
+			$awayScore = doubleval($gameMatches[4][$i]);
 			$homeTeam = $gameMatches[1][$i];
-			$homeScore = intval($gameMatches[2][$i]);
+			$homeScore = doubleval($gameMatches[2][$i]);
 
 			$awayTeam = ($awayTeam == 'JAC') ? 'JAX' : $awayTeam;
 			$homeTeam = ($homeTeam == 'JAC') ? 'JAX' : $homeTeam;

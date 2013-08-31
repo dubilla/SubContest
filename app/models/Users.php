@@ -13,6 +13,16 @@ class Users extends \lithium\data\Model {
 		return $user;
 	}
 
+	public function isEligibleFor($entity, $trySeason) {
+		foreach ($entity->seasons as $season) {
+			if ($season == $trySeason) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 }
 
 ?>

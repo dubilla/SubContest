@@ -8,12 +8,12 @@ use app\models\Users;
 class StandingsController extends \lithium\action\Controller {
 
 	public function index() {
-		$userConditions = array('seasons' => 2012);
+		$userConditions = array('seasons' => 2013);
 		$userFields = array('password' => 0);
 		$users = Users::all(array('conditions' => $userConditions, 'fields' => $userFields));
 
 		$gameConditions = array(
-			'season' => 2012, 
+			'season' => 2013, 
 			'picks' => array('$exists' => true), 
 			'$or' => array(
 				array('winner' => array('$exists' => true)),

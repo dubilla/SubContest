@@ -10,7 +10,7 @@ class WeeksController extends \lithium\action\Controller {
 
 	public function view($week = null) {
 		if (!isset($week)) {
-			$start = mktime(0, 0, 0, 9, 5, 2012);
+			$start = mktime(0, 0, 0, 9, 4, 2013);
 			$now = mktime();
 
 			$days = intval(($now - $start) / 86400);
@@ -29,7 +29,7 @@ class WeeksController extends \lithium\action\Controller {
 
 		date_default_timezone_set('US/Eastern');
 
-		$conditions = array('week' => intval($week));
+		$conditions = array('season' => 2013, 'week' => intval($week));
 		$order = array('kickoff' => 1, 'awayTeam.abbreviation' => 1);
 		$fields = array('awayTeam' => 1, 'homeTeam' => 1, 'kickoff' => 1, 'line' => 1, 'picks' => 1, 'push' => 1, 'winner' => 1);
 

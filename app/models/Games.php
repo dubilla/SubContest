@@ -43,7 +43,7 @@ class Games extends \lithium\data\Model {
 		if (!$entity->isPickedBy($username)) {
 			$week = $entity->week;
 
-			$conditions = array('week' => $week, ('picks.' . $username) => array('$exists' => true));
+			$conditions = array('season' => 2013, 'week' => $week, ('picks.' . $username) => array('$exists' => true));
 			$count = Games::count(compact('conditions'));
 
 			if ($count >= 5) {

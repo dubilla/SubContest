@@ -7,6 +7,8 @@ use app\models\Teams;
 
 class Lines extends \lithium\console\Command {
 
+	public $update;
+
 	public function run() {
 		$weeklyCard = file_get_contents('http://www.thelvh.com/supercontestweeklycard');
 
@@ -63,7 +65,7 @@ class Lines extends \lithium\console\Command {
 				)
 			)));
 
-			if (isset($this->update) && $this->update == 'true') {
+			if ($this->update == 'true') {
 				$game = Games::first(array('conditions' => array(
 					'season' => 2013,
 					'week' => $week,

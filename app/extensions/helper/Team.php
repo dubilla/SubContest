@@ -4,6 +4,10 @@ namespace app\extensions\helper;
 
 class Team extends \lithium\template\Helper {
 
+	public function className($team) {
+		return strtolower($team->abbreviation);
+	}
+
 	public function name($team) {
 		if ($team->abbreviation == 'NYG') {
 			return 'NY Giants';

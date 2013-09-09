@@ -7,9 +7,9 @@ div#header {
 	margin: 1em 0;
 }
 
-h2 {
-	font-size: 1em;
-	font-weight: bold;
+div#header h1 a {
+	color: black;
+	text-decoration: none;
 }
 
 ul#navigation {

@@ -8,6 +8,11 @@ h1 {
 	font-weight: bold;
 }
 
+h2 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
 a:visited {
 	color: blue;
 }

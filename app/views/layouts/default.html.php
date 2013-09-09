@@ -19,7 +19,7 @@
 <body class="app">
 	<div id="container">
 		<div id="header">
-			<h1>SubContest</h1>
+			<h1><?= $this->html->link('SubContest', '/'); ?></h1>
 			<ul id="navigation">
 				<li><?= $this->html->link('Games', '/', array('class' => ($this->_request->controller == 'weeks') ? 'selected' : '')); ?></li>
 				<li><?= $this->html->link('Standings', '/standings', array('class' => ($this->_request->controller == 'standings') ? 'selected' : '')); ?></li>

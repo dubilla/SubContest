@@ -26,7 +26,7 @@
 				<li><?= $this->html->link('Lines', 'http://www.thelvh.com/supercontestweeklycard'); ?></li>
 
 				<?php if ($this->user->isLoggedIn()): ?>
-					<li><?= $this->html->link('Settings', '/users/edit'); ?></li>
+					<li><?= $this->html->link('Settings', '/users/edit', array('class' => ($this->_request->controller == 'users') ? 'selected' : '')); ?></li>
 					<li><?= $this->html->link('Log Out', '/logout'); ?></li>
 				<?php else: ?>
 					<li><?= $this->html->link('Log In', '/login'); ?></li>

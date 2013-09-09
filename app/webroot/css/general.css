@@ -7,6 +7,11 @@ div#header {
 	margin: 1em 0;
 }
 
+h2 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
 ul#navigation {
 	margin-top: 0.3em;
 }

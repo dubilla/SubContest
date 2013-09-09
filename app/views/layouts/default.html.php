@@ -12,7 +12,7 @@
 	<?php echo $this->html->charset();?>
 	<title><?php echo $this->title(); ?> &laquo; SubContest &laquo; Coinflipper</title>
 	<meta content="user-scalable=no, width=device-width" name="viewport"/>
-	<?php echo $this->html->style(array('reset', 'core', 'general', 'game', 'team', 'standings', 'users')); ?>
+	<?php echo $this->html->style(array('reset', 'core', 'general', 'form', 'game', 'team', 'standings', 'users')); ?>
 	<?php echo $this->html->script(array('jquery', 'subcontest')); ?>
 	<?php echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
 </head>

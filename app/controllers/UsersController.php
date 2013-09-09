@@ -9,11 +9,15 @@ use app\models\Users;
 class UsersController extends \lithium\action\Controller {
 
 	public function add() {
-		$user = Users::create($this->request->data);
+		$sessionCheck = Auth::check('default');
 
-		if ($this->request->data) {
-			if ($user->save()) {
-				$this->redirect('Users::add');
+		if ($sessionCheck && $sessionCheck['username'] == 'jpnance') {
+			$user = Users::create($this->request->data);
+
+			if ($this->request->data) {
+				if ($user->save()) {
+					$this->redirect('Users::add');
+				}
 			}
 		}
 

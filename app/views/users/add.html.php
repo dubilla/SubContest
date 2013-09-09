@@ -1,4 +1,5 @@
 <?php $this->title('Add User'); ?>
+<?php if ($user): ?>
 <h2>Add user</h2>
 <?= $this->form->create($user); ?>
 	<?= $this->form->field('username'); ?>
@@ -8,3 +9,4 @@
 	<?= $this->form->field('nickname'); ?>
 	<?= $this->form->submit('Create me'); ?>
 <?= $this->form->end(); ?>
+<?php endif; ?>

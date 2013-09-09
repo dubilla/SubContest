@@ -3,8 +3,8 @@
 <?= $this->form->create($user); ?>
 	<?= $this->form->field('username'); ?>
 	<?= $this->form->field('password', array('type' => 'password')); ?>
-	<?= $this->form->field('firstName'); ?>
-	<?= $this->form->field('lastName'); ?>
+	<?= $this->form->field('firstName', array('label' => 'First Name')); ?>
+	<?= $this->form->field('lastName', array('label' => 'Last Name')); ?>
 	<?= $this->form->field('nickname'); ?>
 	<?= $this->form->submit('Create me'); ?>
 <?= $this->form->end(); ?>

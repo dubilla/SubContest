@@ -49,9 +49,9 @@ class UsersController extends \lithium\action\Controller {
 	}
 
 	public function index() {
-		$adminCheck = Auth::check('default');
+		$sessionCheck = Auth::check('default');
 
-		if ($adminCheck && $adminCheck['username'] == 'jpnance') {
+		if ($sessionCheck && $sessionCheck['username'] == 'jpnance') {
 			$order = array('firstName' => 1);
 			$users = Users::all(compact('order'));
 		}

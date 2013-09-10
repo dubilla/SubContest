@@ -1,37 +1,44 @@
 div.game {
-	border: 1px solid #aaa;
+	border: 1px solid #666;
 	border-radius: 6px;
 	display: inline-block;
-	height: 114px;
+	height: 200px;
 	letter-spacing: 0px;
 	margin-top: 0.5em;
 	margin-right: 0.2em;
-	padding: 1em;
 	vertical-align: bottom;
-	width: 224px;
-}
-
-div.game div.at,
-div.game div.teams,
-div.game div.scores {
-	display: inline-block;
-}
-
-div.game div.at {
-	margin-right: 0.3em;
+	width: 300px;
 }
 
 div.game div.teams {
-	font-size: 120%;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
 }
 
-div.game div.kickoff {
-	font-size: 100%;
-	margin: 0.5em 0 1em 0;
+div.game div.teams div.team,
+div.game div.scores div.score {
+	font-size: 160%;
+}
+
+div.game div.scores div.score {
+	padding: 0.1em 0.5em 0.1em 0;
+}
+
+div.game div.teams div.team {
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	background-size: 10%;
+	padding: 0.1em 0 0.1em 2em;
+}
+
+div.game div.kickoff,
+div.game div.status,
+div.game div.final {
+	padding: 0.5em;
 	text-align: center;
 }
 
-div.game div.teams span.team.pick {
+div.game div.teams div.team.pick {
 	font-weight: bold;
 }
 
@@ -41,19 +48,19 @@ div.game div.teams span.line {
 }
 
 div.game.not-started {
-	background-color: lightgray;
 }
 
-div.game.not-started div.teams {
-	font-size: 140%;
-}
-
-div.game.not-started.not-picked a.team.picked,
-div.game.not-started.picked.away-team a.home-team.picked,
-div.game.not-started.picked.home-team a.away-team.picked,
-div.game.not-started.picked.away-team a.away-team.not-picked,
-div.game.not-started.picked.home-team a.home-team.not-picked {
+div.game.not-started.not-picked a.picked,
+div.game.not-started.picked.away-team div.home-team a.picked,
+div.game.not-started.picked.away-team div.away-team a.not-picked,
+div.game.not-started.picked.home-team div.away-team a.picked,
+div.game.not-started.picked.home-team div.home-team a.not-picked {
 	display: none;
+}
+
+div.game.not-started.picked.away-team div.away-team a.picked,
+div.game.not-started.picked.home-team div.home-team a.picked {
+	font-weight: bold;
 }
 
 div.game.picked {
@@ -76,17 +83,13 @@ div.game.final.won {
 	border-color: green;
 }
 
-div.game.final div.teams {
-	width: 174px;
-}
-
 div.game.final div.scores {
-	font-size: 120%;
+	float: right;
 	text-align: right;
 }
 
 div.game table.picks {
-	margin-top: 1em;
+	margin: 1em auto 0;
 	width: 100%;
 }
 
@@ -99,9 +102,14 @@ div.game table.picks td {
 
 div.game table.picks th {
 	font-weight: bold;
-	padding-right: 0.6em;
+	padding-right: 0.5em;
 	text-align: right;
-	width: 30px;
+	width: 3.6em;
+}
+
+div.game table.picks tr.home-picks th,
+div.game table.picks tr.home-picks td {
+	padding-top: 0.5em;
 }
 
 div.game table.picks th.winner {

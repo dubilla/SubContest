@@ -2,16 +2,13 @@
 	<div class="kickoff">
 		<?= date('l', $game->kickoff->sec); ?> at <?= date('g:ia', $game->kickoff->sec); ?> ET
 	</div>
-	<div class="at"><br />at</div>
 	<div class="teams">
 		<?php if (isset($username)): ?>
-			<?= $this->view()->render(array('element' => 'teams/pick_link'), array('game' => $game, 'team' => $game->awayTeam(), 'username' => $username)); ?><br /> 
-			<?= $this->view()->render(array('element' => 'teams/pick_link'), array('game' => $game, 'team' => $game->homeTeam(), 'username' => $username)); ?>
+			<div class="team away-team <?= $this->team->className($game->awayTeam()); ?>"><?= $this->view()->render(array('element' => 'teams/pick_link'), array('game' => $game, 'team' => $game->awayTeam(), 'username' => $username)); ?></div>
+			<div class="team home-team <?= $this->team->className($game->homeTeam()); ?>"><?= $this->view()->render(array('element' => 'teams/pick_link'), array('game' => $game, 'team' => $game->homeTeam(), 'username' => $username)); ?> <span class="line"><?= $this->game->line($game->line); ?></span></div>
 		<?php else: ?>
-			<span class="team"><?= $this->team->name($game->awayTeam()); ?></span><br />
-			<span class="team"><?= $this->team->name($game->homeTeam()); ?></span>
+			<div class="team"><?= $this->team->name($game->awayTeam()); ?></div>
+			<div class="team"><?= $this->team->name($game->homeTeam()); ?></div>
 		<?php endif; ?>
-
-		<span class="line"><?= $this->game->line($game->line); ?></span>
 	</div>
 </div>

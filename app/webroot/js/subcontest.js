@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('a.team').click(pickGame);
+	$('div.team a').click(pickGame);
 });
 
 function pickGame(e) {

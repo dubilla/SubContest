@@ -79,6 +79,10 @@ div.game div.teams span.line {
 	vertical-align: middle;
 }
 
+div.game.not-started {
+	background-color: lightgray;
+}
+
 div.game.not-started div.teams {
 	margin-top: 36px;
 	margin-left: 32px;

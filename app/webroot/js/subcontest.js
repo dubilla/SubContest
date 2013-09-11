@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	$('div.team a').click(pickGame);
+
+	$('input[name=username]').focus();
 });
 
 function pickGame(e) {

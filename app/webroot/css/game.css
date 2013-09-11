@@ -47,7 +47,13 @@ div.game div.teams span.line {
 	vertical-align: middle;
 }
 
-div.game.not-started {
+div.game.not-started div.teams {
+	margin-top: 36px;
+	margin-left: 32px;
+}
+
+div.game.started div.teams {
+	margin-left: 32px;
 }
 
 div.game.not-started.not-picked a.picked,

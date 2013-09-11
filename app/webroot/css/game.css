@@ -13,6 +13,39 @@ div.game {
 div.game div.teams {
 }
 
+div.game div.teams div.team.ari { background-image: url('../images/ari.png'); }
+div.game div.teams div.team.atl { background-image: url('../images/atl.png'); }
+div.game div.teams div.team.bal { background-image: url('../images/bal.png'); }
+div.game div.teams div.team.buf { background-image: url('../images/buf.png'); }
+div.game div.teams div.team.car { background-image: url('../images/car.png'); }
+div.game div.teams div.team.chi { background-image: url('../images/chi.png'); }
+div.game div.teams div.team.cin { background-image: url('../images/cin.png'); }
+div.game div.teams div.team.cle { background-image: url('../images/cle.png'); }
+div.game div.teams div.team.dal { background-image: url('../images/dal.png'); }
+div.game div.teams div.team.den { background-image: url('../images/den.png'); }
+div.game div.teams div.team.det { background-image: url('../images/det.png'); }
+div.game div.teams div.team.gb { background-image: url('../images/gb.png'); }
+div.game div.teams div.team.hou { background-image: url('../images/hou.png'); }
+div.game div.teams div.team.ind { background-image: url('../images/ind.png'); }
+div.game div.teams div.team.jax { background-image: url('../images/jax.png'); }
+div.game div.teams div.team.kc { background-image: url('../images/kc.png'); }
+div.game div.teams div.team.mia { background-image: url('../images/mia.png'); }
+div.game div.teams div.team.min { background-image: url('../images/min.png'); }
+div.game div.teams div.team.ne { background-image: url('../images/ne.png'); }
+div.game div.teams div.team.no { background-image: url('../images/no.png'); }
+div.game div.teams div.team.nyg { background-image: url('../images/nyg.png'); }
+div.game div.teams div.team.nyj { background-image: url('../images/nyj.png'); }
+div.game div.teams div.team.oak { background-image: url('../images/oak.png'); }
+div.game div.teams div.team.phi { background-image: url('../images/phi.png'); }
+div.game div.teams div.team.pit { background-image: url('../images/pit.png'); }
+div.game div.teams div.team.sd { background-image: url('../images/sd.png'); }
+div.game div.teams div.team.sea { background-image: url('../images/sea.png'); }
+div.game div.teams div.team.sf { background-image: url('../images/sf.png'); }
+div.game div.teams div.team.stl { background-image: url('../images/stl.png'); }
+div.game div.teams div.team.tb { background-image: url('../images/tb.png'); }
+div.game div.teams div.team.ten { background-image: url('../images/ten.png'); }
+div.game div.teams div.team.was { background-image: url('../images/was.png'); }
+
 div.game div.teams div.team,
 div.game div.scores div.score {
 	font-size: 160%;
@@ -23,9 +56,8 @@ div.game div.scores div.score {
 }
 
 div.game div.teams div.team {
-	background-position: 6px center;
+	background-position: 5px center;
 	background-repeat: no-repeat;
-	background-size: 10%;
 	padding: 0.1em 0 0.1em 1.7em;
 }
 

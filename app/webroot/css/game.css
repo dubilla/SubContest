@@ -1,5 +1,5 @@
 div.game {
-	border: 1px solid #666;
+	border: 1px solid #aaa;
 	border-radius: 6px;
 	display: inline-block;
 	height: 200px;
@@ -7,12 +7,10 @@ div.game {
 	margin-top: 0.5em;
 	margin-right: 0.2em;
 	vertical-align: bottom;
-	width: 300px;
+	width: 310px;
 }
 
 div.game div.teams {
-	border-bottom: 1px solid #ddd;
-	border-top: 1px solid #ddd;
 }
 
 div.game div.teams div.team,
@@ -21,14 +19,14 @@ div.game div.scores div.score {
 }
 
 div.game div.scores div.score {
-	padding: 0.1em 0.5em 0.1em 0;
+	padding: 0.1em 0.2em 0.1em 0;
 }
 
 div.game div.teams div.team {
-	background-position: 10px center;
+	background-position: 6px center;
 	background-repeat: no-repeat;
 	background-size: 10%;
-	padding: 0.1em 0 0.1em 2em;
+	padding: 0.1em 0 0.1em 1.7em;
 }
 
 div.game div.kickoff,
@@ -44,7 +42,9 @@ div.game div.teams div.team.pick {
 
 div.game div.teams span.line {
 	color: #666;
-	font-size: 70%;
+	font-size: 60%;
+	font-weight: normal;
+	vertical-align: middle;
 }
 
 div.game.not-started {
@@ -64,12 +64,15 @@ div.game.not-started.picked.home-team div.home-team a.picked {
 }
 
 div.game.picked {
-	background-color: #D4ECFC;
+	background-color: #e1edf1;
 	border: 1px solid black;
 }
 
+div.game.picked.final div.teams {
+}
+
 div.game.final.lost {
-	background-color: #ffd0d0;
+	background-color: #ffe4e4;
 	border-color: red;
 }
 
@@ -79,9 +82,23 @@ div.game.final.pushed {
 }
 
 div.game.final.won {
-	background-color: #d0ffd0;
+	background-color: #dfffe5;
 	border-color: green;
 }
+
+/*
+div.game.final.lost div.teams {
+	background-color: #ffd0d0;
+}
+
+div.game.final.pushed div.teams {
+	background-color: #eaeaea;
+}
+
+div.game.final.won div.teams {
+	background-color: #c3ffce;
+}
+*/
 
 div.game.final div.scores {
 	float: right;

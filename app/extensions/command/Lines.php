@@ -14,7 +14,7 @@ class Lines extends \lithium\console\Command {
 
 		$weekPattern = '/<strong>PRO FOOTBALL WEEK #(\d\d?)<\/strong>/';
 		preg_match($weekPattern, $weeklyCard, $weekMatches);
-		$week = intval($weekMatches);
+		$week = intval($weekMatches[1]);
 
 		$gamePattern = '/<tr.*?>\s*<td.*?>\d\d? (.*?)<\/td>\s*<td.*?>.*?<\/td>\s*<td.*?>\d\d?:\d\d [AP]M<\/td>\s*<td.*?>\d\d? (.*?)<\/td>\s*<td.*?>(.*?)<\/td>\s*<\/tr>/';
 		preg_match_all($gamePattern, $weeklyCard, $gameMatches);

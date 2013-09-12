@@ -54,9 +54,9 @@ class Lines extends \lithium\console\Command {
 			$homeTeam = Teams::first(array('conditions' => array(
 				'mascot' => array(
 					'$regex' => $parsed['homeTeam'],
-					'$options' => 'i')
+					'$options' => 'i'
 				)
-			));
+			)));
 
 			$awayTeam = Teams::first(array('conditions' => array(
 				'mascot' => array(
@@ -66,7 +66,7 @@ class Lines extends \lithium\console\Command {
 			)));
 
 			if ($this->update == 'true') {
-				$game = Games::first(array('conditions' => array(
+				$conditions = array(
 					'season' => 2013,
 					'week' => $week,
 					'awayTeam.abbreviation' => $awayTeam->abbreviation,
@@ -76,7 +76,9 @@ class Lines extends \lithium\console\Command {
 					'winner' => array('$exists' => false),
 					'push' => array('$exists' => false),
 					'line' => array('$exists' => false)
-				)));
+				);
+
+				$game = Games::first(compact('conditions'));
 
 				if ($game) {
 					$game->line = $parsed['line'];

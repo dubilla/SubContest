@@ -58,6 +58,7 @@ div.game div.scores div.score {
 div.game div.teams div.team {
 	background-position: 5px center;
 	background-repeat: no-repeat;
+	height: 26px;
 	padding: 0.1em 0 0.1em 1.7em;
 }
 

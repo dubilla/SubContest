@@ -8,7 +8,7 @@
 			<div class="team home-team <?= $this->team->className($game->homeTeam()); ?>"><?= $this->view()->render(array('element' => 'teams/pick_link'), array('game' => $game, 'team' => $game->homeTeam(), 'username' => $username)); ?> <span class="line"><?= $this->game->line($game->line); ?></span></div>
 		<?php else: ?>
 			<div class="team <?= $this->team->className($game->awayTeam()); ?>"><?= $this->team->name($game->awayTeam()); ?></div>
-			<div class="team <?= $this->team->className($game->homeTeam()); ?>"><?= $this->team->name($game->homeTeam()); ?></div>
+			<div class="team <?= $this->team->className($game->homeTeam()); ?>"><?= $this->team->name($game->homeTeam()); ?> <span class="line"><?= $this->game->line($game->line); ?></span></div>
 		<?php endif; ?>
 	</div>
 </div>

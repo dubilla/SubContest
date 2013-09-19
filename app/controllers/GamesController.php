@@ -29,6 +29,10 @@ class GamesController extends \lithium\action\Controller {
 				$error = $e->getMessage();
 			}
 		}
+		else {
+			$success = false;
+			$error = 'You must be logged in to make a pick.';
+		}
 
 		return compact('success', 'action', 'pick', 'game', 'error');
 	}
@@ -51,6 +55,10 @@ class GamesController extends \lithium\action\Controller {
 				$success = false;
 				$error = $e->getMessage();
 			}
+		}
+		else {
+			$success = false;
+			$error = 'You must be logged in to make a pick.';
 		}
 
 		return compact('success', 'action', 'game', 'error');

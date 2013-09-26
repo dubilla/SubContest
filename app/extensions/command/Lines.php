@@ -29,8 +29,8 @@ class Lines extends \lithium\console\Command {
 			);
 
 			$parsed = array();
-			$searches = array(' 1/2', 'PK');
-			$replacements = array('.5', '0');
+			$searches = array(' 1/2', 'PK', '&nbsp;');
+			$replacements = array('.5', '0', ' ');
 
 			if (strpos($unparsed['favorite'], '*') !== FALSE) {
 				$parsed['awayTeam'] = $unparsed['underdog'];
@@ -39,7 +39,7 @@ class Lines extends \lithium\console\Command {
 				array_push($searches, '+');
 				array_push($replacements, '-');
 
-				$parsed['line'] = doubleval(str_replace($searches, $replacements, $unparsed['line']));
+				$parsed['line'] = doubleval(trim(str_replace($searches, $replacements, $unparsed['line'])));
 			}
 			else if (strpos($unparsed['underdog'], '*') !== FALSE) {
 				$parsed['awayTeam'] = $unparsed['favorite'];
@@ -48,7 +48,7 @@ class Lines extends \lithium\console\Command {
 				array_push($searches, '+');
 				array_push($replacements, '');
 
-				$parsed['line'] = doubleval(str_replace($searches, $replacements, $unparsed['line']));
+				$parsed['line'] = doubleval(trim(str_replace($searches, $replacements, $unparsed['line'])));
 			}
 
 			$homeTeam = Teams::first(array('conditions' => array(

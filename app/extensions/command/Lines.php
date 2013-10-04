@@ -29,8 +29,8 @@ class Lines extends \lithium\console\Command {
 			);
 
 			$parsed = array();
-			$searches = array(' 1/2', 'PK', '&nbsp;');
-			$replacements = array('.5', '0', ' ');
+			$searches = array('1/2', 'PK', '&nbsp;', ' ');
+			$replacements = array('.5', '0', '', '');
 
 			if (strpos($unparsed['favorite'], '*') !== FALSE) {
 				$parsed['awayTeam'] = $unparsed['underdog'];
